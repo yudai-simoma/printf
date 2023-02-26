@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:33:11 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/02/26 19:40:05 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/26 21:46:35 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,16 @@
 */
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s == NULL || fd > 0)
+	size_t	i;
+
+	if (s == NULL)
 		return ;
-	write(fd, s, ft_strlen(s));
+	if (fd < 0)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }

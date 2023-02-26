@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 11:47:10 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/02/26 20:22:12 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/26 22:01:58 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,38 +28,65 @@ void	put_char(char a_c, size_t *a_return_num)
  */
 void	put_str(char *a_str, size_t *a_return_num)
 {
+	if (a_str == NULL)
+		a_str = "(null)";
 	ft_putstr_fd(a_str, 1);
 	(*a_return_num) += ft_strlen(a_str);
 }
 
 void	put_nbr(int a_nbr, size_t *a_return_num)
 {
+	char	*str;
+
 	ft_putnbr_fd(a_nbr, 1);
-	(*a_return_num) += ft_strlen(ft_itoa(a_nbr));
+	str = ft_itoa(a_nbr);
+	(*a_return_num) += ft_strlen(str);
+	free(str);
+	str = NULL;
 }
 
 void	put_u_nbr(unsigned int a_nbr, size_t *a_return_num)
 {
+	char	*str;
+
 	ft_u_putnbr_fd(a_nbr, 1);
-	(*a_return_num) += ft_strlen(ft_u_itoa(a_nbr));
+	str = ft_u_itoa(a_nbr);
+	(*a_return_num) += ft_strlen(str);
+	free(str);
+	str = NULL;
 }
 
 void	put_16_upper(unsigned int a_nbr, size_t *a_return_num)
 {
+	char	*str;
+
 	ft_16_upper_fd(a_nbr, 1);
-	(*a_return_num) += ft_strlen(ft_16_itoa(a_nbr));
+	str = ft_16_itoa(a_nbr);
+	(*a_return_num) += ft_strlen(str);
+	free(str);
+	str = NULL;
 }
 
 void	put_16_lower(unsigned int a_nbr, size_t *a_return_num)
 {
+	char	*str;
+
 	ft_16_lower_fd(a_nbr, 1);
-	(*a_return_num) += ft_strlen(ft_16_itoa(a_nbr));
+	str = ft_16_itoa(a_nbr);
+	(*a_return_num) += ft_strlen(str);
+	free(str);
+	str = NULL;
 }
 
 void	put_16_address(void *a_address, size_t *a_return_num)
 {
+	char	*str;
+
 	ft_16_address_fd((uintptr_t)a_address, 1);
-	(*a_return_num) += ft_strlen(ft_16_address_itoa((uintptr_t)a_address)) + 2;
+	str = ft_16_address_itoa((uintptr_t)a_address);
+	(*a_return_num) += ft_strlen(str) + 2;
+	free(str);
+	str = NULL;
 }
 
 /*
