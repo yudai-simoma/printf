@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_u_putnbr.fd.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:35:07 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/02/26 14:34:48 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/26 15:06:15 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 /*
 ** 与えられた数値を文字列へ格納
@@ -59,7 +59,7 @@ static void	ft_putnbr_fd_add(long n_len, long nn, long break_num, int fd)
 /*
 ** 数値を出力する
 */
-void	ft_putnbr_fd(int n, int fd)
+void	ft_u_putnbr_fd(unsigned int n, int fd)
 {
 	long	n_len;
 	long	nn;

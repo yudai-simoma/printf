@@ -6,23 +6,24 @@
 #    By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/12 15:15:53 by yshimoma          #+#    #+#              #
-#    Updated: 2023/02/12 16:17:37 by yshimoma         ###   ########.fr        #
+#    Updated: 2023/02/26 17:41:57 by yshimoma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_printf.c
+SRCS = ft_printf.c ft_u_putnbr_fd.c ft_16_upper_fd.c ft_16_lower_fd.c\
+	ft_16_address_fd.c ft_u_itoa.c ft_16_itoa.c ft_16_address_itoa.c
 OBJS = ${SRCS:.c=.o}
 NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
-ARFLAGS = -crs
-#LIBFT_SRCS = 
-#LIBFT_OBJS = 
+ARFLAGS = rcs
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
+	$(MAKE) -C ./libft
+	cp libft/libft.a ${NAME}
 	${AR} ${ARFLAGS} ${NAME} ${OBJS}
 
 .c.o:
