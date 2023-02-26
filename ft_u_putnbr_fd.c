@@ -6,11 +6,12 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:35:07 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/02/26 15:06:15 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/26 20:22:23 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 /*
 ** 与えられた数値を文字列へ格納

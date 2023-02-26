@@ -6,7 +6,7 @@
 #    By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/12 15:15:53 by yshimoma          #+#    #+#              #
-#    Updated: 2023/02/26 17:41:57 by yshimoma         ###   ########.fr        #
+#    Updated: 2023/02/26 20:42:00 by yshimoma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +18,17 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
+INCLUDE = include
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	$(MAKE) -C ./libft
+	$(MAKE) -C libft
 	cp libft/libft.a ${NAME}
 	${AR} ${ARFLAGS} ${NAME} ${OBJS}
 
 .c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} -I${INCLUDE} -c $< -o ${<:.c=.o}
 
 clean:
 	${RM} ${OBJS}
