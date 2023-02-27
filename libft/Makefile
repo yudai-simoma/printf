@@ -6,7 +6,7 @@
 #    By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/15 13:28:00 by yshimoma          #+#    #+#              #
-#    Updated: 2023/02/12 15:38:03 by yshimoma         ###   ########.fr        #
+#    Updated: 2023/02/27 10:39:49 by yshimoma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,8 @@ NAME = libft.a
 CC = cc
 # コンパイルオプション
 CFLAGS = -Wall -Wextra -Werror
+# ヘッダーファイルの場所をインクルードする
+INCLUDE = ../include
 
 # ボーナスが呼ばれた場合は、ボーナスのソースも追加する
 ALL_OBJS = ${OBJS}
@@ -48,7 +50,7 @@ $(NAME):	${ALL_OBJS}
 
 # .cファイルを.oファイルに変換
 .c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} -I${INCLUDE} -c $< -o ${<:.c=.o}
 
 # 全てのオブジェクトファイルを削除
 clean:

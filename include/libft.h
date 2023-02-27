@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 13:09:56 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/31 11:19:34 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/27 10:32:57 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <unistd.h>
+
+extern int	g_error_flg;
 
 typedef struct s_list
 {
