@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:32:13 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/02/26 20:21:54 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/27 12:37:08 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static char	*ft_set_itoa(char *return_str, long nn, size_t size, char sign)
 }
 
 /*
- * 数値を文字列にして返す関数
+ * アドレス値を16進数に変換し、変換後を文字列にして返す関数
  */
 char	*ft_16_address_itoa(uintptr_t n)
 {

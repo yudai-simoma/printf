@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:32:13 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/02/26 20:22:17 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/27 12:38:34 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static char	*ft_set_itoa(char *return_str, long nn, size_t size, char sign)
 }
 
 /*
- * 数値を文字列にして返す関数
+ * unsigned intの数値を文字列にして返す関数
  */
 char	*ft_u_itoa(unsigned int n)
 {

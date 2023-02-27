@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 11:47:10 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/02/27 12:17:20 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/27 12:46:00 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 int	g_error_flg = 0;
 
 /*
- * 受け取った文字をft_putchar_fdに渡し、1文字出力
- * 1文字出力した分return_numを1つ足す
+ * %c の場合に呼ばれる
+ * 文字の出力と、出力した文字をの長さを格納する
  */
 void	put_char(char a_c, size_t *a_return_num)
 {
@@ -26,7 +26,8 @@ void	put_char(char a_c, size_t *a_return_num)
 }
 
 /*
- * 
+ * %s の場合に呼ばれる
+ * 文字列の出力と、出力した文字列の長さを格納する
  */
 void	put_str(char *a_str, size_t *a_return_num)
 {
@@ -37,6 +38,7 @@ void	put_str(char *a_str, size_t *a_return_num)
 }
 
 /*
+ * 第一引数が%の場合に%の次文字からのアドレスを受け取り、呼ばれる
  * 変換指定子を処理する
  */
 void	ap_puts(const char *a_format, va_list *a_ap, size_t *a_return_num)
@@ -61,12 +63,11 @@ void	ap_puts(const char *a_format, va_list *a_ap, size_t *a_return_num)
 		put_char(*a_format, a_return_num);
 }
 
-//
-//1, エラーチェック（引数カウント）
-//2, %が来るまで出力
-//3, %の次の文字で処理を分ける
-//
-//
+/*
+ * main関数から一番初めに呼ばれる関数
+ * 第一引数の値を一文字つづ確認し、%が来たら処理を分ける
+ * 戻り値は、出力した文字の長さ
+ */
 int	ft_printf(const char *a_format, ...)
 {
 	va_list	r_ap;

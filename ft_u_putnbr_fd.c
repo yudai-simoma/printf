@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_u_putnbr.fd.c                                   :+:      :+:    :+:   */
+/*   ft_u_putnbr_fd.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:35:07 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/02/26 20:22:23 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/27 12:38:49 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	ft_putnbr_fd_add(long n_len, long nn, long break_num, int fd)
 }
 
 /*
-** 数値を出力する
+** unsigned intの数値を出力する
 */
 void	ft_u_putnbr_fd(unsigned int n, int fd)
 {

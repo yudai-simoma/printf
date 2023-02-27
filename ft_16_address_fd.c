@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:35:07 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/02/27 11:26:20 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/27 12:35:23 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 
 /*
-** 与えられた数値を文字列へ格納
+** 与えられた数値を出力
 */
 static void	ft_putnbr(unsigned int nn, long break_num, int fd)
 {
@@ -61,7 +61,7 @@ static void	ft_putnbr_fd_add(long n_len, long nn, long break_num, int fd)
 }
 
 /*
-** 数値を出力する
+** アドレス値を16進数で出力する
 */
 void	ft_16_address_fd(uintptr_t n, int fd)
 {
