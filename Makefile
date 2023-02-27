@@ -6,12 +6,12 @@
 #    By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/12 15:15:53 by yshimoma          #+#    #+#              #
-#    Updated: 2023/02/26 20:42:00 by yshimoma         ###   ########.fr        #
+#    Updated: 2023/02/27 12:15:57 by yshimoma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ft_printf.c ft_u_putnbr_fd.c ft_16_upper_fd.c ft_16_lower_fd.c\
-	ft_16_address_fd.c ft_u_itoa.c ft_16_itoa.c ft_16_address_itoa.c
+	ft_16_address_fd.c ft_u_itoa.c ft_16_itoa.c ft_16_address_itoa.c ft_printf_utils.c
 OBJS = ${SRCS:.c=.o}
 NAME = libftprintf.a
 CC = cc

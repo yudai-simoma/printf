@@ -6,12 +6,14 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 11:47:10 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/02/27 11:29:36 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/27 12:17:20 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
+
+int	g_error_flg = 0;
 
 /*
  * 受け取った文字をft_putchar_fdに渡し、1文字出力
@@ -72,7 +74,6 @@ int	ft_printf(const char *a_format, ...)
 	size_t	i;
 
 	r_return_num = 0;
-	g_error_flg = 0;
 	va_start(r_ap, a_format);
 	i = 0;
 	while (a_format[i] != '\0')
