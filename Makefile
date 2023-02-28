@@ -6,29 +6,26 @@
 #    By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/12 15:15:53 by yshimoma          #+#    #+#              #
-#    Updated: 2023/02/27 12:15:57 by yshimoma         ###   ########.fr        #
+#    Updated: 2023/02/28 19:34:39 by yshimoma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_printf.c ft_u_putnbr_fd.c ft_16_upper_fd.c ft_16_lower_fd.c\
-	ft_16_address_fd.c ft_u_itoa.c ft_16_itoa.c ft_16_address_itoa.c ft_printf_utils.c
+SRCS = ft_printf.c ft_u_itoa.c ft_16_itoa.c ft_16_address_itoa.c ft_printf_utils.c \
+	ft_printf_utils.c ft_itoa.c ft_calloc.c ft_memset.c ft_strlen.c ft_putstr_fd.c
 OBJS = ${SRCS:.c=.o}
 NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
-INCLUDE = include
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	$(MAKE) -C libft
-	cp libft/libft.a ${NAME}
 	${AR} ${ARFLAGS} ${NAME} ${OBJS}
 
 .c.o:
-	${CC} ${CFLAGS} -I${INCLUDE} -c $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 clean:
 	${RM} ${OBJS}

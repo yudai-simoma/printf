@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 12:58:55 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/02/28 19:15:34 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/28 19:29:59 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <limits.h>
+# include <stdlib.h>
 
 extern int	g_error_flg;
 
@@ -35,5 +36,6 @@ void	ft_putstr_fd(char *s, int fd);
 char	*ft_itoa(int n);
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_memset(void *b, int c, size_t len);
+size_t	ft_strlen(const char *s);
 
 #endif
