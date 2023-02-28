@@ -6,12 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:32:13 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/02/27 12:37:32 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/28 19:10:42 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 /*
  * 数値が何桁か判断する関数

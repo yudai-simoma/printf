@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_16_address_itoa.c                               :+:      :+:    :+:   */
+/*   ft_u_itoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:32:13 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/02/28 19:10:46 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/27 12:38:34 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 /*
  * 数値が何桁か判断する関数
@@ -29,7 +30,7 @@ static size_t	ft_malloc_size(long n)
 	}
 	while (n)
 	{
-		n /= 16;
+		n /= 10;
 		malloc_size++;
 	}
 	return (malloc_size);
@@ -81,22 +82,22 @@ static char	*ft_set_itoa(char *return_str, long nn, size_t size, char sign)
 	i = 0;
 	while (i < size)
 	{
-		return_str[i] = (nn % 16) + '0';
-		nn /= 16;
+		return_str[i] = (nn % 10) + '0';
+		nn /= 10;
 		i++;
 	}
 	return (return_str);
 }
 
 /*
- * アドレス値を16進数に変換し、変換後を文字列にして返す関数
+ * unsigned intの数値を文字列にして返す関数
  */
-char	*ft_16_address_itoa(uintptr_t n)
+char	*ft_u_itoa(unsigned int n)
 {
-	char		*return_str;
-	uintptr_t	nn;
-	char		sign;
-	size_t		malloc_size;
+	char	*return_str;
+	long	nn;
+	char	sign;
+	size_t	malloc_size;
 
 	nn = (long)n;
 	malloc_size = ft_malloc_size(nn);

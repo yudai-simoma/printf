@@ -6,11 +6,12 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 11:47:10 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/02/28 19:12:13 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/27 12:46:00 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 int	g_error_flg = 0;
 
@@ -20,10 +21,7 @@ int	g_error_flg = 0;
  */
 void	put_char(char a_c, size_t *a_return_num)
 {
-	int	x;
-
-	x = 0;
-	x = write(1, &a_c, 1);
+	ft_putchar_fd(a_c, 1);
 	(*a_return_num)++;
 }
 

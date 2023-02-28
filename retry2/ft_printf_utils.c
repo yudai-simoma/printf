@@ -6,11 +6,12 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 11:27:45 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/02/28 19:16:35 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/27 12:45:16 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 /*
  * %d, %i の場合に呼ばれる
