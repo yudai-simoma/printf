@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 11:27:45 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/02/28 19:26:47 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:32:51 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	put_16_upper(unsigned int a_nbr, size_t *a_return_num)
 {
 	char	*r_str;
 
-	r_str = ft_16_itoa(a_nbr);
+	r_str = ft_16_itoa_upper(a_nbr);
 	if (r_str == NULL)
 		r_str = "";
 	ft_putstr_fd(r_str, 1);
@@ -71,7 +71,7 @@ void	put_16_lower(unsigned int a_nbr, size_t *a_return_num)
 {
 	char	*r_str;
 
-	r_str = ft_16_itoa(a_nbr);
+	r_str = ft_16_itoa_lower(a_nbr);
 	if (r_str == NULL)
 		r_str = "";
 	ft_putstr_fd(r_str, 1);
@@ -92,7 +92,7 @@ void	put_16_address(void *a_address, size_t *a_return_num)
 	if (r_str == NULL)
 		r_str = "";
 	ft_putstr_fd(r_str, 1);
-	(*a_return_num) += ft_strlen(r_str) + 2;
+	(*a_return_num) += ft_strlen(r_str);
 	free(r_str);
 	r_str = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 11:47:10 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/02/28 19:23:27 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/03/01 21:08:57 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	put_char(char a_c, size_t *a_return_num)
 
 	x = 0;
 	x = write(1, &a_c, 1);
+	if (x == -1)
+		g_error_flg = -1;
 	(*a_return_num)++;
 }
 
@@ -99,11 +101,18 @@ int	ft_printf(const char *a_format, ...)
 // {
 // 	int x;
 // 	int y;
+// 	int a;
 
-// 	x = printf("   printf : %c, %%, %s, %i, %d, %u, %X, %x, %p\n", 'b', 
-		//"abcdefg", 12345, 987654, 2147483648, 123456789, 987654321, 60);
-// 	y = ft_printf("ft_printf : %c, %%, %s, %i, %d, %u, %X, %x, %p\n", 'b', 
-		//"abcdefg", 12345, 987654, 2147483648, 123456789, 987654321, 60);
-// 	printf("\nprintf= %d, ft_printf= %d\n", x, y);
+// 	x = 0;
+// 	y = 0;
+// 	a = UINT_MAX + 4;
+
+// 	// x = printf("   printf : %c, %%, %s, %i, %d, %u, %X, %x, %p\n",
+//	// a, a, a, a, a, a, a, a);
+// 	// y = ft_printf("ft_printf : %c, %%, %s, %i, %d, %u, %X, %x, %p\n",
+//	// a, a, a, a, a, a, a, a);
+// 	x = printf("   printf : %p\n", a);
+// 	y = ft_printf("ft_printf : %p\n", a);
+// 	printf ("\nprintf  %d, ft_printf = %d", x, y);
 // 	return (0);
 // }

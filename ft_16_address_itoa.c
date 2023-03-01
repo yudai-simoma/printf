@@ -6,27 +6,22 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:32:13 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/02/28 19:27:14 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:31:46 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 /*
- * 数値が何桁か判断する関数
+ * 数値が16進数で何桁か判断する関数
  */
-static size_t	ft_malloc_size(long n)
+static size_t	ft_malloc_size(uintptr_t n)
 {
 	size_t	malloc_size;
 
 	malloc_size = 0;
 	if (n == 0)
 		return (1);
-	if (n < 0)
-	{
-		n *= -1;
-		malloc_size = 1;
-	}
 	while (n)
 	{
 		n /= 16;
@@ -36,80 +31,39 @@ static size_t	ft_malloc_size(long n)
 }
 
 /*
-** 受け取った値を交換する
-*/
-static void	swap_arr_str(char *a, char *b)
-{
-	char	c;
-
-	c = *a;
-	*a = *b;
-	*b = c;
-}
-
-/*
-** 配列の要素数の半分だけ繰り返しを行い、端から順に2つの値を取得する
-** char配列
-*/
-static void	ft_rev_str_tab(char *str, size_t size)
-{
-	size_t	count_loop;
-	size_t	arr_num;
-
-	count_loop = size / 2;
-	arr_num = 0;
-	while (count_loop != 0)
-	{
-		swap_arr_str(&str[size - 1 - arr_num], &str[arr_num]);
-		count_loop--;
-		arr_num++;
-	}
-}
-
-/*
- * 数値を文字列に格納する
+ * 数値を小文字16進数に変換した文字列に格納する
  */
-static char	*ft_set_itoa(char *return_str, long nn, size_t size, char sign)
+static char	*ft_set_itoa(char *return_str, uintptr_t n, size_t size)
 {
-	size_t	i;
+	int		x;
+	char	*str;
 
-	if (sign == '-')
+	str = "0123456789abcdef";
+	return_str[0] = '0';
+	return_str[1] = 'x';
+	size += 2;
+	while (size > 2)
 	{
-		size -= 1;
-		return_str[size] = '-';
-	}
-	i = 0;
-	while (i < size)
-	{
-		return_str[i] = (nn % 16) + '0';
-		nn /= 16;
-		i++;
+		x = n % 16;
+		return_str[size - 1] = str[x];
+		n /= 16;
+		size--;
 	}
 	return (return_str);
 }
 
 /*
- * アドレス値を16進数に変換し、変換後を文字列にして返す関数
+ * 数値を小文字16進数に変換し、変換後を文字列にして返す関数
  */
 char	*ft_16_address_itoa(uintptr_t n)
 {
-	char		*return_str;
-	uintptr_t	nn;
-	char		sign;
-	size_t		malloc_size;
+	char	*return_str;
+	size_t	malloc_size;
 
-	nn = (long)n;
-	malloc_size = ft_malloc_size(nn);
-	return_str = (char *)ft_calloc(malloc_size + 1, sizeof(char));
+	malloc_size = ft_malloc_size(n);
+	return_str = (char *)ft_calloc(malloc_size + 3, sizeof(char));
 	if (return_str == NULL)
 		return (NULL);
-	sign = '+';
-	if (nn < 0)
-	{
-		nn *= -1;
-		sign = '-';
-	}
-	return_str = ft_set_itoa(return_str, nn, malloc_size, sign);
-	ft_rev_str_tab(return_str, malloc_size);
+	return_str = ft_set_itoa(return_str, n, malloc_size);
 	return (return_str);
 }
